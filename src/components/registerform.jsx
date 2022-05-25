@@ -114,6 +114,9 @@ render() {
         <Form.Item name="username" label="Username">
             <Input />
         </Form.Item>
+        <Form.Item name="role" label="YourCode">
+            <Input />
+        </Form.Item>
 
         <Form.Item {...tailFormItemLayout}>
             <Button type="primary" htmlType="submit"  >

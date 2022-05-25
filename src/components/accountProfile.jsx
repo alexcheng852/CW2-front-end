@@ -1,11 +1,14 @@
 import UserContext from '../contexts/user';
 import React, {  useContext } from 'react';
 import {status,json} from '/utilities/requestHandlers';
-import SearchUser from './userSearch'
-import ImageUpload from './ImageUpload'
-import { Row, Col, Space } from 'antd';
+import SearchUser from './userSearch';
+import ImageUpload from './ImageUpload';
+import ArticleUpload from './ArticleUpload';
+import { Row, Col, Space, Form, Input, Button  } from 'antd';
+import { Link } from "react-router-dom";
 import { Avatar, Image } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
+
 
 
 function Profile(props) {
@@ -53,7 +56,9 @@ function Profile(props) {
         
       <Col span={12}>       
       { user.role=="admin"&&  <ImageUpload />}</Col>
-     </Space>
+     </Space><br />
+      <Col span={12}>       
+      { user.role=="admin" && <button><Link to="/ArticleUpload">Upload</Link></button>} </Col>
 		 </>
       )}
 </UserContext.Consumer> 

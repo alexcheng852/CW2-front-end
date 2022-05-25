@@ -13,6 +13,7 @@ import Img_Page from './components/img_Page';
 import DogList from './components/list';
 import Register from './components/register';
 import UserContext from './contexts/user';
+import ArticleUpload from './components/ArticleUpload';
 import {useNavigate } from 'react-router-dom';
 const { Header, Content, Footer, Button} = Layout;
 
@@ -76,7 +77,7 @@ regComplete() {
         
   
           {!context.user.loggedIn&& <Link to="/login">Login</Link>}           {context.user.loggedIn&& <Link to="/account" style={{color:"red",background: "#91d5ff"}} type ="link" > Account: {context.user.username}  </Link>} 
-          {!context.user.registerOK&&!context.user.loggedIn&&<Link to="/register">Register</Link>}			      
+          {!context.user.registerOK&&!context.user.loggedIn&&<Link to="/register">Register</Link>}		
         </Space>
                        			
 				<Routes>
@@ -89,6 +90,7 @@ regComplete() {
 						<Route path="/about" element={<About />} />	
             <Route path="/account" element={<Account />} />	
             <Route path="/img_Page" element={<Img_Page />} />	
+            <Route path="/ArticleUpload" element={<ArticleUpload />} />
 				</Routes>			
 				</Content>
 				
