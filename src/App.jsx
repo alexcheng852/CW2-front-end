@@ -14,6 +14,7 @@ import DogList from './components/list';
 import Register from './components/register';
 import UserContext from './contexts/user';
 import ArticleUpload from './components/ArticleUpload';
+import ArticleDelete from './components/ArticleDelete';
 import {useNavigate } from 'react-router-dom';
 const { Header, Content, Footer, Button} = Layout;
 
@@ -91,6 +92,7 @@ regComplete() {
             <Route path="/account" element={<Account />} />	
             <Route path="/img_Page" element={<Img_Page />} />	
             <Route path="/ArticleUpload" element={<ArticleUpload />} />
+            <Route path="/ArticleDelete" element={<ArticleDelete />} />
 				</Routes>			
 				</Content>
 				

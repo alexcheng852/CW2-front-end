@@ -44,6 +44,7 @@ class ArticleUploadForm extends React.Component {
         // For you TODO: display success message and/or redirect
         console.log(data);  
           this.context.regComplete(); 
+      
    //     alert(`Registration Completed! Pls. press login or green button to continue `)      
 			  
     })

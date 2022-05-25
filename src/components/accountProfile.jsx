@@ -57,8 +57,10 @@ function Profile(props) {
       <Col span={12}>       
       { user.role=="admin"&&  <ImageUpload />}</Col>
      </Space><br />
-      <Col span={12}>       
-      { user.role=="admin" && <button><Link to="/ArticleUpload">Upload</Link></button>} </Col>
+      
+      <Col span={12}>  
+        { user.role=="admin" && <h2>Upload or Delete Article</h2>}
+      { user.role=="admin" && <button><Link to="/ArticleUpload">Upload</Link></button>} { user.role=="admin" && <button><Link to="/ArticleDelete">Delete</Link></button>}</Col>
 		 </>
       )}
 </UserContext.Consumer> 
