@@ -15,6 +15,7 @@ import Register from './components/register';
 import UserContext from './contexts/user';
 import ArticleUpload from './components/ArticleUpload';
 import ArticleDelete from './components/ArticleDelete';
+import ArticleUpdate from './components/ArticleUpdate';
 import {useNavigate } from 'react-router-dom';
 const { Header, Content, Footer, Button} = Layout;
 
@@ -93,11 +94,13 @@ regComplete() {
             <Route path="/img_Page" element={<Img_Page />} />	
             <Route path="/ArticleUpload" element={<ArticleUpload />} />
             <Route path="/ArticleDelete" element={<ArticleDelete />} />
+            <Route path="/ArticleUpdate" element={<ArticleUpdate />} />
+
 				</Routes>			
 				</Content>
 				
        <Footer>
-					<p style={{ color: 'green' }}>VT6003CEM Demo</p>
+					<p style={{ color: 'green' }}>VT6003CEM CW2</p>
 				</Footer>
 			</Router>	
   </UserContext.Provider>  

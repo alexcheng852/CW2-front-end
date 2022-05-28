@@ -9,6 +9,7 @@ import PostIcon from './posticon';
 const { Meta } = Card;
 import { Link} from 'react-router-dom'; 
 
+
 const tailFormItemLayout = {
   wrapperCol: { xs: { span: 24, offset: 0 }, sm: { span: 16, offset: 6 } },
 };
@@ -17,9 +18,23 @@ class ArticleDelete extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      title: "",
+			summary: "",
+      imageurl: "",
+			records: [],
+			showAlert: false,
+			alertMsg: "",
+			alertType: "success",
+			id: "",
+			update: false,
       posts: [],
     }
   }
+  	handleChange = (evt) => {
+		this.setState({
+			[evt.target.name]: evt.target.value,
+		});
+  };
 
   componentDidMount() {
   fetch('https://Rest-API-andDB.alexcheng852.repl.co/api/v1/articles')
@@ -34,34 +49,28 @@ class ArticleDelete extends React.Component {
 
 }
    
-  static contextType = ArtilerContext;  
-  
-  onFinish = (values) => { 
-  console.log('Received values of form: ', values);
-  const {confirm,...data } = values;  // ignore the 'confirm' value
-    console.log("Json  ",JSON.stringify(data))
-    fetch('https://Rest-API-andDB.alexcheng852.repl.co/api/v1/articles', {
-        method: "GET",
-        body: JSON.stringify(data),
-        headers: {
-            "Content-Type": "application/json"
-        }        
-    })
-    .then(status)
-    .then(json)
-    .then(data => {
-        // For you TODO: display success message and/or redirect
-        console.log(data);  
-          this.context.regComplete(); 
-   //     alert(`Registration Completed! Pls. press login or green button to continue `)      
-			  
-    })
-    .catch(errorResponse => {
-        // For you TODO: show nicely formatted error message and clear form
-	 console.error(errorResponse);
-        alert(`Error: ${errorResponse}`);
-    });  
-  }
+	componentWillMount() {
+		this.fetchAllArticle();
+	}
+
+
+
+  	fetchAllArticle = () => {
+		var headers = new Headers();
+		headers.append("Content-Type", "application/json");
+		fetch("https://Rest-API-andDB.alexcheng852.repl.co/api/v1/articles", {
+			method: "GET",
+			headers: headers,
+		})
+			.then((response) => response.json())
+			.then((result) => {
+				console.log("result", result);
+				this.setState({
+					records: result.response,
+				});
+			})
+			.catch((error) => console.log("error", error));
+	};
 
   editArticle = (id) => {
 		fetch("https://Rest-API-andDB.alexcheng852.repl.co/api/v1/articles/" + id, {
@@ -71,11 +80,40 @@ class ArticleDelete extends React.Component {
 			.then((result) => {
 				console.log(result);
 				this.setState({
-					id: id,
+          id: id,
 					update: true,
-					title: result.response[0].title,
-					summary: result.response[0].summary,
+					name: result.response[0].name,
+					location: result.response[0].location,
+
 				});
+			})
+			.catch((error) => console.log("error", error));
+	};
+
+
+
+ onFinish = () => {
+		var myHeaders = new Headers();
+		myHeaders.append("Content-Type", "application/json");
+
+		var body = JSON.stringify({ id: this.state.id, title: this.state.title, summary: this.state.summary,imageurl: this.state.imageurl });
+		fetch("https://Rest-API-andDB.alexcheng852.repl.co/api/v1/articles", {
+			method: "PUT",
+			headers: myHeaders,
+			body: body,
+		})
+			.then((response) => response.json())
+			.then((result) => {
+				this.setState({
+					showAlert: true,
+					alertMsg: result.response,
+					alertType: "success",
+					update: false,
+					id: "",
+					title: "",
+					summary: "",
+				});
+				this.fetchAllArticle();
 			})
 			.catch((error) => console.log("error", error));
 	};
@@ -91,7 +129,7 @@ class ArticleDelete extends React.Component {
 					alertMsg: result.response,
 					alertType: "danger",
 				});
-				this.fetchAllRecords();
+				this.fetchAllArticle();
 			})
 			.catch((error) => console.log("error", error));
 	};
@@ -100,14 +138,30 @@ class ArticleDelete extends React.Component {
 render() {
 
     return (
-   <div>     
-<Row>
+   <div>   
+     <Container>
+       					{this.state.showAlert === true ? (
+						<Alert
+							variant={this.state.alertType}
+							onClose={() => {
+								this.setState({
+									showAlert: false,
+								});
+							}}
+							dismissible
+						>
+							<Alert.Heading>{this.state.alertMsg}</Alert.Heading>
+						</Alert>
+					) : null}
+    <Row>
 						<Table striped bordered hover size="sm">
 							<thead>
 								<tr>
 									<th>id</th>
 									<th>Title</th>
 									<th>Summary</th>
+                  <th>imageurl</th>
+                  
 									<th colSpan="2">Actions</th>
 								</tr>
 							</thead>
@@ -118,11 +172,8 @@ render() {
 											<td>{post.id}</td>
 											<td>{post.title}</td>
 											<td>{post.summary}</td>
-											<td>
-												<Button variant="info" onClick={() => this.editArticle(post.id)}>
-													Edit
-												</Button>
-											</td>
+                      <td>{post.imageurl}</td>
+											
 											<td>
 												<Button variant="danger" onClick={() => this.deleteArticle(post.id)}>
 													Delete
@@ -134,6 +185,8 @@ render() {
 							</tbody>
 						</Table>
 					</Row>
+
+     </Container>
      
         </div>
       

@@ -3,7 +3,9 @@ import React, {  useContext } from 'react';
 import {status,json} from '/utilities/requestHandlers';
 import SearchUser from './userSearch';
 import ImageUpload from './ImageUpload';
+import SearchDog from './dogSearch';
 import ArticleUpload from './ArticleUpload';
+import ArticleUpdate from './ArticleUpdate';
 import { Row, Col, Space, Form, Input, Button  } from 'antd';
 import { Link } from "react-router-dom";
 import { Avatar, Image } from 'antd';
@@ -57,10 +59,13 @@ function Profile(props) {
       <Col span={12}>       
       { user.role=="admin"&&  <ImageUpload />}</Col>
      </Space><br />
+      <Col span={12}>       
+      <SearchDog /></Col>
+     <br />
       
       <Col span={12}>  
-        { user.role=="admin" && <h2>Upload or Delete Article</h2>}
-      { user.role=="admin" && <button><Link to="/ArticleUpload">Upload</Link></button>} { user.role=="admin" && <button><Link to="/ArticleDelete">Delete</Link></button>}</Col>
+        { user.role=="admin" && <h2>Upload /Delete /Update Article</h2>}
+      { user.role=="admin" && <button><Link to="/ArticleUpload">Upload</Link></button>} { user.role=="admin" && <button><Link to="/ArticleDelete">Delete</Link></button>}{ user.role=="admin" && <button><Link to="/ArticleUpdate">Update</Link></button>}</Col>
 		 </>
       )}
 </UserContext.Consumer> 
