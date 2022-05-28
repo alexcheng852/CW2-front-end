@@ -10,7 +10,7 @@ const { Meta } = Card;
 import { Link} from 'react-router-dom'; 
 
 const formItemLayout = {
-  labelCol: { xs: { span: 24 }, sm: { span: 6 } },
+  labelCol: { xs: { span: 24 }, sm: { span: 10 } },
   wrapperCol: { xs: { span: 24 }, sm: { span: 12 } }
 };
 const tailFormItemLayout = {
@@ -72,38 +72,30 @@ class ArticleUpdate extends React.Component {
 			})
 			.catch((error) => console.log("error", error));
 	};
-
-
-	// update record
-	updateArticle = () => {
-		var myHeaders = new Headers();
-		myHeaders.append("Content-Type", "application/json");
-
-		fetch("https://Rest-API-andDB.alexcheng852.repl.co/api/v1/articles/"+ id, {
-			method: "PUT",
-			headers: myHeaders,
-			body: body,
+  
+  editArticle = (id) => {
+		fetch("https://Rest-API-andDB.alexcheng852.repl.co/api/v1/articles/" + id, {
+			method: "GET",
 		})
 			.then((response) => response.json())
 			.then((result) => {
+				console.log(result);
 				this.setState({
-					showAlert: true,
-					alertMsg: result.response,
-					alertType: "success",
-					update: false,
-					id: "",
-					name: "",
-					location: "",
+					id: id,
+					update: true,
 				});
-				this.fetchAllArticles();
 			})
 			.catch((error) => console.log("error", error));
 	};
+
+
+
+  
   onFinish = (values) => { 
   console.log('Received values of form: ', values);
   const {confirm,...data } = values;  // ignore the 'confirm' value
     console.log("Json  ",JSON.stringify(data))
-    fetch('https://Rest-API-andDB.alexcheng852.repl.co/api/v1/articles', {
+    fetch('https://Rest-API-andDB.alexcheng852.repl.co/api/v1/articles/3', {
         method: "PUT",
         body: JSON.stringify(data),
         headers: {
@@ -153,8 +145,8 @@ class ArticleUpdate extends React.Component {
 									<th>id</th>
 									<th>title</th>
                   <th>summary</th>
-									<th>alltext</th>
 									<th>imageurl</th>
+                  
                   
 								</tr>
 							</thead>
@@ -165,9 +157,7 @@ class ArticleUpdate extends React.Component {
 											<td>{post.id}</td>
 											<td>{post.title}</td>
 											<td>{post.summary }</td>
-                      <td>{post.alltext }</td>
                       <td>{post.imageurl }</td>
-                      
 
 										</tr>
 									);
@@ -179,7 +169,10 @@ class ArticleUpdate extends React.Component {
 					{/* Insert Form */}
 					<Row>
         <Form {...formItemLayout} name="upload" scrollToFirstError onFinish={this.onFinish}>
-        
+          
+        <Form.Item name="id" label="id" >
+            <Input />
+        </Form.Item>
         <Form.Item name="title" label="title" >
             <Input />
         </Form.Item>

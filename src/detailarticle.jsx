@@ -40,6 +40,7 @@ for (var i = 0; i < values.length; i++) {
 				<>
          <h1 style={{ color: 'red' }}> Welcome to Blog Dashboard</h1>   
 					<h2>{values[i].title}</h2>
+          <img  src={values[i].imgURL} />
 
 					<p style={{ color: 'green' }}>{values[i].fullText}</p>
           <p style={{ color: 'cyan' }}>{values[i].description}</p>
