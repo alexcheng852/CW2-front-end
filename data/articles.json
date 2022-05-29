@@ -1,39 +1,60 @@
 [
   { "id": 1,
-    "title": "Dog article",
-    "fullText": "some good dogs here",
-    "description":"The selection process was not easy for the Panel of Judges led by President Ir Edwin CHUNG in view of the distinctive achievements of individual candidates.  We would also like to thank the Work Group of the HKIE Young Engineers Arthur & Louise May Memorial Scholarship for their effort in fine-tuning the selection criteria and shortlisting the applications.",
-    "comments":"some good dogs here",
+    "title": "admintest",
+    "fullText": "summarysummary",
+    "description":"summary.",
     "likes":"4",
-    "imgURL":"https://images.dog.ceo/breeds/komondor/n02105505_853.jpg",
-    "summary":"The selection process was not easy for the Panel of Judges led by President Ir Edwin CHUNG."
+    "imgURL":"https://images.dog.ceo/breeds/shiba/shiba-8.jpg",
+    "summary":"summary"
   },
   { "id": 2,
     "title": "Another Dog article",
     "fullText": "again here is some comments for your dog",
     "description":"The selection process was not easy for the Panel of Judges led by President Ir Edwin CHUNG in view of the distinctive achievements of individual candidates.  We would also like to thank the Work Group of the HKIE Young Engineers Arthur & Louise May Memorial Scholarship for their effort in fine-tuning the selection criteria and shortlisting the applications.",
-    "comments":"again here is some comments for your dog",
     "likes":"8",
-    "imgURL":"../img/dog1.jpeg",
+    "imgURL":"https://images.dog.ceo/breeds/entlebucher/n02108000_2125.jpg",
     "summary":"The selection process was not easy for the Panel of Judges led by President Ir Edwin CHUNG ."
   },
   {  "id": 3,
     "title": "Coventry University ",
     "fullText": "Some news about Pets in Coventry University ",
     "description":"The selection process was not easy for the Panel of Judges led by President Ir Edwin CHUNG in view of the distinctive achievements of individual candidates.  We would also like to thank the Work Group of the HKIE Young Engineers Arthur & Louise May Memorial Scholarship for their effort in fine-tuning the selection criteria and shortlisting the applications.",
-    "comments":"some news about pets in CU",
     "likes":"99",
-    "imgURL":"../img/dog2.jpeg",
+    "imgURL":"https://images.dog.ceo/breeds/shiba/shiba-19.jpg",
     "summary":"The selection process was not easy for the Panel of Judges led by President Ir Edwin CHUNG in view ."
   },
-  {  "id": 4,
+  {  "id": 6,
     "title": "Smart Dogs",
     "fullText": "smart dogs are coming to IVE",
     "description":"The selection process was not easy for the Panel of Judges led by President Ir Edwin CHUNG in view of the distinctive achievements of individual candidates.  We would also like to thank the Work Group of the HKIE Young Engineers Arthur & Louise May Memorial Scholarship for their effort in fine-tuning the selection criteria and shortlisting the applications.",
-    "comments":"smart dogs are coming to IVE",
     "likes":"9",
-    "imgURL":"../img/dog3.jpg",
+    "imgURL":"https://images.dog.ceo/breeds/shiba/shiba-18.jpg",
+    "summary":"The selection process was not easy for the Panel of Judges led by President Ir Edwin CHUNG ."
+  },
+    {  "id": 7,
+    "title": "Smart Dogs",
+    "fullText": "smart dogs are coming to IVE",
+    "description":"The selection process was not easy for the Panel of Judges led by President Ir Edwin CHUNG in view of the distinctive achievements of individual candidates.  We would also like to thank the Work Group of the HKIE Young Engineers Arthur & Louise May Memorial Scholarship for their effort in fine-tuning the selection criteria and shortlisting the applications.",
+    "likes":"9",
+    "imgURL":"https://images.dog.ceo/breeds/shiba/shiba-18.jpg",
+    "summary":"The selection process was not easy for the Panel of Judges led by President Ir Edwin CHUNG ."
+  },
+    {  "id": 8,
+    "title": "Smart Dogs",
+    "fullText": "smart dogs are coming to IVE",
+    "description":"The selection process was not easy for the Panel of Judges led by President Ir Edwin CHUNG in view of the distinctive achievements of individual candidates.  We would also like to thank the Work Group of the HKIE Young Engineers Arthur & Louise May Memorial Scholarship for their effort in fine-tuning the selection criteria and shortlisting the applications.",
+    "likes":"9",
+    "imgURL":"https://images.dog.ceo/breeds/shiba/shiba-18.jpg",
+    "summary":"The selection process was not easy for the Panel of Judges led by President Ir Edwin CHUNG ."
+  },
+      {  "id": 10,
+    "title": "Smart Dogs",
+    "fullText": "smart dogs are coming to IVE",
+    "description":"The selection process was not easy for the Panel of Judges led by President Ir Edwin CHUNG in view of the distinctive achievements of individual candidates.  We would also like to thank the Work Group of the HKIE Young Engineers Arthur & Louise May Memorial Scholarship for their effort in fine-tuning the selection criteria and shortlisting the applications.",
+    "likes":"9",
+    "imgURL":"https://images.dog.ceo/breeds/shiba/shiba-18.jpg",
     "summary":"The selection process was not easy for the Panel of Judges led by President Ir Edwin CHUNG ."
   }
+  
 ]
 

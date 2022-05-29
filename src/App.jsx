@@ -16,6 +16,7 @@ import UserContext from './contexts/user';
 import ArticleUpload from './components/ArticleUpload';
 import ArticleDelete from './components/ArticleDelete';
 import ArticleUpdate from './components/ArticleUpdate';
+import OfficeMap from "./components/map";
 import {useNavigate } from 'react-router-dom';
 const { Header, Content, Footer, Button} = Layout;
 
@@ -76,8 +77,8 @@ regComplete() {
         <Link to="/dashboard">Dashboard</Link>
         <Link to="/about">About</Link>
         <Link to="/list"> List </Link>
+      
         
-  
           {!context.user.loggedIn&& <Link to="/login">Login</Link>}           {context.user.loggedIn&& <Link to="/account" style={{color:"red",background: "#91d5ff"}} type ="link" > Account: {context.user.username}  </Link>} 
           {!context.user.registerOK&&!context.user.loggedIn&&<Link to="/register">Register</Link>}		
         </Space>
@@ -95,6 +96,7 @@ regComplete() {
             <Route path="/ArticleUpload" element={<ArticleUpload />} />
             <Route path="/ArticleDelete" element={<ArticleDelete />} />
             <Route path="/ArticleUpdate" element={<ArticleUpdate />} />
+            <Route path="/map" element={<OfficeMap />} />
 
 				</Routes>			
 				</Content>

@@ -30,7 +30,9 @@ function Nav(props) {
         <Menu.Item key="1" >Home<Link to="/"></Link></Menu.Item>
         <Menu.Item key="2" >Dashboard<Link to="/dashboard"></Link></Menu.Item>
         <Menu.Item key="3" >About<Link to="/about"></Link></Menu.Item>
-        <Menu.Item key="6"> BREEDS LIST <Link to="/list"></Link>
+        <Menu.Item key="6"> Breeds List <Link to="/list"></Link>
+        </Menu.Item>
+        <Menu.Item key="7"> Contact Us <Link to="/map"></Link>
         </Menu.Item>
         <Menu.Item key="5" type="primary"  >{user.loggedIn&&<Link to="/img_Page">UploadImage</Link>}
         </Menu.Item>
