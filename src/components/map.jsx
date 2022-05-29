@@ -47,7 +47,7 @@ export class OfficeMap extends Component {
             <h3>{this.state.selectedPlace.name}</h3>
           </div>
         </InfoWindow>
-      </Map><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+      </Map><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
         
 <p><h1 style={{ color: "red" }}>Contact Us</h1></p>
 <p>Address:</p>

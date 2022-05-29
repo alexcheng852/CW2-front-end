@@ -43,7 +43,7 @@ for (var i = 0; i < values.length; i++) {
           <img  src={values[i].imgURL} />
 
 					<p style={{ color: 'green' }}>{values[i].fullText}</p>
-          <p style={{ color: 'cyan' }}>{values[i].description}</p>
+          <p style={{ color: 'plum' }}>{values[i].description}</p>
 					<Button
 						type="primary"
 						icon={<RollbackOutlined />}

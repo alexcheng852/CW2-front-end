@@ -57,8 +57,8 @@ function handleChange(value) {
    <>
      <Col span={16}>   
         <PageHeader
-            title="dog search "
-            subTitle="Manage User Info"/>       
+            title="Dog search "
+            subTitle="Manage Dog Info"/>       
        <Search placeholder="Search Users"
             allowClear
             enterButton="Search"

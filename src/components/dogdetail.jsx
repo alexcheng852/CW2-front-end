@@ -87,7 +87,7 @@ class Dogdetail extends React.Component {
     
     return(
       <div>
-        <h1>Dogs by Breed</h1>
+        <h1 style={{ color: 'green' }}>Dogs by Breed</h1>
 
         <p>Choose a dog from the drop down menu and click submit.</p>
         <select value={select} onChange={this.handleSelect}>
@@ -104,7 +104,7 @@ class Dogdetail extends React.Component {
         </div>
 
         <p></p>
-        <p>Breed: {select}</p>
+        <p><h1 style={{ color: 'blue' }}>Breed: {select}</h1></p>
         <p> Or click the random button for a random dog.</p>
         <button onClick={this.getRandomImage}>random</button>
       </div>
