@@ -57,7 +57,7 @@ function handleChange(value) {
    <>
      <Col span={16}>   
         <PageHeader
-            title="Blog User Admin "
+            title="User Admin "
             subTitle="Manage User Info"/>       
        <Search placeholder="Search Users"
             allowClear

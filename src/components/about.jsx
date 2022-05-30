@@ -5,7 +5,7 @@ import Article from '../articles'
 function About() {
   return (
     <> 
-    <h2 style={{ color: 'green' }}> Welcome to Blog client Demo</h2>     
+    <h2 style={{ color: 'green' }}> Welcome to Dog Charity</h2>     
            
       <Article />
     </>

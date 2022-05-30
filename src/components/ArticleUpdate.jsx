@@ -95,7 +95,7 @@ class ArticleUpdate extends React.Component {
   console.log('Received values of form: ', values);
   const {confirm,...data } = values;  // ignore the 'confirm' value
     console.log("Json  ",JSON.stringify(data))
-    fetch('https://Rest-API-andDB.alexcheng852.repl.co/api/v1/articles/3', {
+    fetch('https://Rest-API-andDB.alexcheng852.repl.co/api/v1/articles/' + id, {
         method: "PUT",
         body: JSON.stringify(data),
         headers: {
@@ -164,7 +164,7 @@ class ArticleUpdate extends React.Component {
 								})}
 							</tbody>
 						</Table>
-					</Row>
+					</Row><br /><br />
 
 					{/* Insert Form */}
 					<Row>
